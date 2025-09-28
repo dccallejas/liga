@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIGA DE OTOÑO - Ultimate Frisbee Córdoba</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f9f9f9;
+      background-image: url('img/logo-liga-otono.jpeg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+      opacity: 1;
+      background-attachment: fixed;
+      background-blend-mode: lighten;
+    }
+  
+    .tab-content {
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+    }
+  
+    table th, table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+  
+    .logo-header h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #b24c00;
+      margin: 0;
+    }
+  
+    /* Oculta los controles de administrador */
+    #adminControls {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <!-- Encabezado centrado con logo a la derecha difuminado -->
+<!-- Encabezado centrado con logo de fondo adaptado -->
+<div style="position: relative; text-align: center; margin-bottom: 40px; padding-top: 40px;">
+    <!-- Logo difuminado responsivo en móviles -->
+    <img src="img/logo-liga-otono.jpeg" alt="Marca de agua"
+         style="position: absolute; top: 0; right: 0; opacity: 0.08; max-width: 130px; z-index: 0; display: none;"
+         class="d-none d-md-block">
+  
+    <div style="position: relative; z-index: 1;">
+      <h1 style="font-size: 2.4rem; color: #b24c00; font-weight: 800; margin-bottom: 0;">LIGA DE OTOÑO</h1>
+      <h2 style="font-size: 1.4rem; color: #444;">Ultimate Córdoba</h2>
+    </div>
+  </div>
+  
+
+    <!-- Admin toggle -->
+    <div class="form-check form-switch mb-3">
+      <input class="form-check-input" type="checkbox" id="adminToggle" onchange="toggleAdmin()">
+      <label class="form-check-label" for="adminToggle">Modo administrador</label>
+    </div>
+
+    <!-- Pestañas -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">🏆 Torneo General</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#stats">📊 Estadísticas Individuales</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#equipos">🧢 Equipos</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#espiritu">🔥 Espíritu de Juego</button>
+      </li>
+    </ul>
+
+    <!-- Contenido -->
+    <div class="tab-content">
+      <!-- Torneo -->
+      <div class="tab-pane fade show active" id="general">
+      <h3 class="mt-3">Posiciones por Equipo 🏆</h3>
+      <table class="table table-striped" style="max-width: 600px;">
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PP</th>
+            <th>GA</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dimensión Galáctica</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+                  
+          </tr>
+          <tr>
+            <td>Cortacésped</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+                
+          </tr>
+          <tr>
+            <td>Brigada-A</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+              
+          </tr>
+          <tr>
+            <td>Tetzu</td>
+            <td>2</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+                
+          </tr>
+        </tbody>
+      </table>
+    
+      <h3 class="mt-4" style="color: #b24c00;">Resultados por Fecha</h3>
+      <div class="accordion" id="resultadosFechas" style="max-width: 400px;">
+    
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fecha1" aria-expanded="false" aria-controls="fecha1">
+              Fecha #1 - 30/Mar/2025
+            </button>
+          </h2>
+          <div id="fecha1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#resultadosFechas">
+            <div class="accordion-body">
+              Brigada-A <strong>15</strong> - <strong>7</strong> Tetzu<br>
+              Dimensión Galáctica <strong>15</strong> - <strong>12</strong> Cortacésped
+            </div>
+          </div>
+        </div>
+    
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fecha2" aria-expanded="false" aria-controls="fecha2">
+              Fecha #2 - 06/Abr/2025
+            </button>
+          </h2>
+          <div id="fecha2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#resultadosFechas">
+            <div class="accordion-body">
+              Dimensión Galáctica <strong>15</strong> - <strong>7</strong> Brigada-A<br>
+              Tetzu <strong>6</strong> - <strong>15</strong> Cortacésped
+            </div>
+          </div>
+        </div>
+    
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fecha3" aria-expanded="false" aria-controls="fecha3">
+              Fecha #3 - 11/May/2025
+            </button>
+          </h2>
+          <div id="fecha3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#resultadosFechas">
+            <div class="accordion-body">
+              Tetzu <strong>11</strong> - <strong>14 </strong>  Dimensión Galáctica<br>
+              Brigada-A <strong>11</strong> - <strong>15 </strong>  Cortacésped
+            </div>
+          </div>
+        </div>
+    
+      
+    
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fecha5" aria-expanded="false" aria-controls="fecha5">
+              Fecha #5 - 29/Jun/2025
+            </button>
+          </h2>
+          <div id="fecha5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#resultadosFechas">
+            <div class="accordion-body">
+              Cortacésped <strong>15</strong> - <strong>6 </strong> Tetzu<br>
+              Dimensión Galáctica <strong>15</strong> - <strong>4</strong> Brigada-A
+            </div>
+          </div>
+        </div>
+    
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fecha6" aria-expanded="false" aria-controls="fecha6">
+              Fecha #6 - 13/Jul/2025
+            </button>
+          </h2>
+          <div id="fecha6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#resultadosFechas">
+            <div class="accordion-body">
+              Cortacésped  <strong>15</strong> - <strong>8</strong> Brigada-A<br>
+              Tetzu  <strong>14</strong> - <strong>15</strong> Dimensión Galáctica
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+        <!-- Estadísticas -->
+        <div class="tab-pane fade" id="stats">
+          <h3 class="mt-3">Registro de Estadísticas 📊 </h3>
+          <BR> </BR>
+          <div class="row g-2 align-items-center mb-3" id="adminControls">
+            <div class="col-md-4">
+              <select id="playerSelect" class="form-select"></select>
+            </div>
+            <div class="col">
+              <button class="btn btn-success" onclick="addStat('goles')">+ Gol</button>
+              <button class="btn btn-primary" onclick="addStat('asistencias')">+ Asistencia</button>
+              <button class="btn btn-warning" onclick="addStat('defensas')">+ Defensa</button>
+            </div>
+          </div>
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                    <th>Jugador</th>
+                    <th>Equipo</th>
+                    <th>Goles</th>
+                    <th>Asistencias</th>
+                    <th>Defensas</th>
+                    <th style="color: #b24c00;">Puntaje Total</th>
+                  </tr>
+                </thead>
+            <tbody id="statsTable"></tbody>
+          </table>
+        </div>
+
+        <!-- Equipos -->
+        <div class="tab-pane fade" id="equipos">
+          <h3 class="mt-3">Equipos 🧢</h3>
+          <br>
+          <div class="row text-center">
+            <!-- Brigada A -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <img src="img/brigada.jpeg" alt="Brigada A" class="img-fluid" style="max-height: 150px;">
+            
+              <div class="card mt-2">
+                <div class="card-body p-2">
+                  <table class="table table-sm table-bordered mb-0">
+                    <thead class="table-light">
+                      <tr><th>Integrantes</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>David Vera</td></tr>
+                      <tr><td>Scott Jackson</td></tr>
+                      <tr><td>Francisco Lozada</td></tr>
+                      <tr><td>Fernando Benvenuto</td></tr>
+                      <tr><td>Nelson Núñez</td></tr>
+                      <tr><td>Willmary Medina</td></tr>
+                      <tr><td>Ticiano Affilieri</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Corta Césped -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <img src="img/Corta.jpeg" alt="Corta Césped" class="img-fluid" style="max-height: 150px;">
+            
+              <div class="card mt-2">
+                <div class="card-body p-2">
+                  <table class="table table-sm table-bordered mb-0">
+                    <thead class="table-light">
+                      <tr><th>Integrantes</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Facundo Trucco</td></tr>
+                      <tr><td>Francisco Jiménez</td></tr>
+                      <tr><td>Giuliano Arrigone</td></tr>
+                      <tr><td>Eloy Bauer Espitia</td></tr>
+                      <tr><td>Bruno Tonello</td></tr>
+                      <tr><td>Celeste Medina</td></tr>
+                      <tr><td>Macarena Cáceres</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dimensión Galáctica -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <img src="img/Dimension.jpeg" alt="Dimensión Galáctica" class="img-fluid" style="max-height: 150px;">
+            
+              <div class="card mt-2">
+                <div class="card-body p-2">
+                  <table class="table table-sm table-bordered mb-0">
+                    <thead class="table-light">
+                      <tr><th>Integrantes</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Juan Carreño</td></tr>
+                      <tr><td>Ezequiel Polzoni</td></tr>
+                      <tr><td>Juan Pablo Callejas</td></tr>
+                      <tr><td>Rainier Salavé</td></tr>
+                      <tr><td>Juan Ybarra</td></tr>
+                      <tr><td>Catherine Callejas</td></tr>
+                      <tr><td>Diana</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tetzu -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <img src="img/tetsu.jpeg" alt="Tetzu" class="img-fluid" style="max-height: 150px;">
+            
+              <div class="card mt-2">
+                <div class="card-body p-2">
+                  <table class="table table-sm table-bordered mb-0">
+                    <thead class="table-light">
+                      <tr><th>Integrantes</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Javier Cormenzana</td></tr>
+                      <tr><td>Juan Sebastián Leuro</td></tr>
+                      <tr><td>Zachary James</td></tr>
+                      <tr><td>Harold Cadena Gallego</td></tr>
+                      <tr><td>Francisco</td></tr>
+                      <tr><td>Laura Gibaut</td></tr>
+                      <tr><td>Margarita Rosa Montoya</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+     const jugadores = [
+  { nombre: 'David Vera', equipo: 'Brigada A', goles: 5, asistencias: 21, defensas: 4 },
+  { nombre: 'Scott Jackson', equipo: 'Brigada A', goles: 6, asistencias: 11, defensas: 1 },
+  { nombre: 'Francisco Lozada', equipo: 'Brigada A', goles: 11, asistencias: 7, defensas: 6 },
+  { nombre: 'Fernando Benvenuto', equipo: 'Brigada A', goles: 12, asistencias: 7, defensas: 7 },
+  { nombre: 'Nelson Núñez', equipo: 'Brigada A', goles: 1, asistencias: 0, defensas: 1 },
+  { nombre: 'Willmary Medina', equipo: 'Brigada A', goles: 2, asistencias: 1, defensas: 1 },
+  { nombre: 'Ticiano Affilieri', equipo: 'Brigada A', goles: 7, asistencias: 0, defensas: 4 },
+  { nombre: 'Facundo Trucco', equipo: 'Corta Césped', goles: 7, asistencias: 45, defensas: 11 },
+  { nombre: 'Francisco Jiménez', equipo: 'Corta Césped', goles: 15, asistencias: 6, defensas: 2 },
+  { nombre: 'Giuliano Arrigone', equipo: 'Corta Césped', goles: 28, asistencias: 6, defensas: 10 },
+  { nombre: 'Eloy Bauer Espitia', equipo: 'Corta Césped', goles: 9, asistencias: 16, defensas: 6 },
+  { nombre: 'Bruno Tonello', equipo: 'Corta Césped', goles: 4, asistencias: 1, defensas: 2 },
+  { nombre: 'Celeste Medina', equipo: 'Corta Césped', goles: 6, asistencias: 0, defensas: 1 },
+  { nombre: 'Macarena Cáceres', equipo: 'Corta Césped', goles: 2, asistencias: 0, defensas: 0 },
+  { nombre: 'Juan Carreño', equipo: 'Dimensión Galáctica', goles: 12, asistencias: 30, defensas: 7 },
+  { nombre: 'Ezequiel Polzoni', equipo: 'Dimensión Galáctica', goles: 11, asistencias: 0, defensas: 5 },
+  { nombre: 'Juan Pablo Callejas', equipo: 'Dimensión Galáctica', goles: 17, asistencias: 10, defensas: 10 },
+  { nombre: 'Rainier Salavé', equipo: 'Dimensión Galáctica', goles: 2, asistencias: 15, defensas: 12 },
+  { nombre: 'Juan Ybarra', equipo: 'Dimensión Galáctica', goles: 14, asistencias: 1, defensas: 9 },
+  { nombre: 'Diana D', equipo: 'Dimensión Galáctica', goles: 1, asistencias: 0, defensas: 0 },
+  { nombre: 'Catherine Callejas', equipo: 'Dimensión Galáctica', goles: 17, asistencias: 17, defensas: 3 },
+  { nombre: 'Javier Cormenzana', equipo: 'Tetzu', goles: 5, asistencias: 11, defensas: 2 },
+  { nombre: 'Juan Sebastián Leuro', equipo: 'Tetzu', goles: 3, asistencias: 7, defensas: 12 },
+  { nombre: 'Zachary James', equipo: 'Tetzu', goles: 15, asistencias: 6, defensas: 13 },
+  { nombre: 'Harold Cadena Gallego', equipo: 'Tetzu', goles: 13, asistencias: 15, defensas: 3 },
+  { nombre: 'Francisco', equipo: 'Tetzu', goles: 5, asistencias: 0, defensas: 0 },
+  { nombre: 'Laura Gibaut', equipo: 'Tetzu', goles: 1, asistencias: 0, defensas: 1 },
+  { nombre: 'Margarita Rosa Montoya', equipo: 'Tetzu', goles: 2, asistencias: 5, defensas: 2 }
+];
+
+
+      function addStat(tipo) {
+        const nombre = document.getElementById('playerSelect').value;
+        const j = jugadores.find(p => p.nombre === nombre);
+        if (j) {
+          j[tipo]++;
+          renderStats();
+        }
+      }
+
+      function renderStats() {
+    const tbody = document.getElementById('statsTable');
+    const ordenados = jugadores.map(j => ({
+      ...j,
+      puntaje: j.goles + j.asistencias + j.defensas
+    })).sort((a, b) => b.puntaje - a.puntaje);
+
+    tbody.innerHTML = ordenados.map(j => `
+      <tr>
+        <td>${j.nombre}</td>
+        <td>${j.equipo}</td>
+        <td>${j.goles}</td>
+        <td>${j.asistencias}</td>
+        <td>${j.defensas}</td>
+        <td><strong>${j.puntaje}</strong></td>
+      </tr>
+    `).join('');
+  }
+
+      function renderSelect() {
+        const select = document.getElementById('playerSelect');
+        select.innerHTML = jugadores.map(j => `<option>${j.nombre}</option>`).join('');
+      }
+
+      function renderTorneo() {
+    const equipos = [...new Set(jugadores.map(j => j.equipo))];
+
+    const tabla = equipos.map(eq => {
+      const jugadoresEquipo = jugadores.filter(j => j.equipo === eq);
+      const DG = jugadoresEquipo.reduce((a, j) => a + j.goles, 0);
+      let PJ = 0, PG = 0, PP = 0;
+
+      if (eq === 'Brigada A') {
+        PJ = 5; PG = 1; PP = 4;
+      } else if (eq === 'Corta Césped') {
+        PJ = 5; PG = 4; PP = 1;
+      } else if (eq === 'Dimensión Galáctica') {
+        PJ = 5; PG = 5; PP = 0;
+      } else if (eq === 'Tetzu') {
+        PJ = 5; PG = 0; PP = 5;
+      }
+
+      return { equipo: eq, PJ, PG, PP, DG };
+    });
+
+    // 🧠 Ordenar por PG, y si hay empate, por DG
+    tabla.sort((a, b) => {
+      if (b.PG !== a.PG) return b.PG - a.PG;
+      return b.DG - a.DG;
+    });
+
+    const tablaHTML = tabla.map(t => `
+      <tr>
+        <td>${t.equipo}</td>
+        <td>${t.PJ}</td>
+        <td>${t.PG}</td>
+        <td>${t.PP}</td>
+        <td>${t.DG}</td>
+      </tr>`).join('');
+
+    document.querySelector('#general table tbody').innerHTML = tablaHTML;
+  }
+
+
+
+      function toggleAdmin() {
+        const adminControls = document.getElementById('adminControls');
+        adminControls.style.display = document.getElementById('adminToggle').checked ? 'flex' : 'none';
+      }
+
+      toggleAdmin();
+      renderSelect();
+      renderStats();
+      renderTorneo();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Espíritu de Juego -->
+
+
+    <div class="tab-pane fade" id="espiritu" style="margin-left: 90px;">
+      
+  <h3 class="mt-2">🔥 Promedio de Espíritu por Equipo</h3>
+  <br>
+    <table class="table table-striped" style="max-width: 600px;">
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>Partidos Jugados</th>
+          <th>Total Puntos</th>
+          <th>Promedio</th>
+        </tr>
+      </thead>
+      <tbody id="tablaEspiritu">
+        <!-- Se completa con JS -->
+      </tbody>
+    </table>
+
+    <h3 class="mt-4" style="color: #b24c00;">Resultados por Fecha</h3>
+    <div class="accordion" id="resultadosFechas" style="max-width: 400px;">
+      
+      <!-- Fecha 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="espirituFecha1Head">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#espirituFecha1" aria-expanded="false" aria-controls="espirituFecha1">
+            Fecha #1 - 30/Mar/2025
+          </button>
+        </h2>
+        <div id="espirituFecha1" class="accordion-collapse collapse" aria-labelledby="espirituFecha1Head" data-bs-parent="#espirituFechas">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Brigada-A</strong> calificó a <strong>Tetzu</strong>: 10</li>
+              <li><strong>Tetzu</strong> calificó a <strong>Brigada-A</strong>: 10</li>
+              <li><strong>Dimensión Galáctica</strong> calificó a <strong>Cortacésped</strong>: 11</li>
+              <li><strong>Cortacésped</strong> calificó a <strong>Dimensión Galáctica</strong>: 10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fecha 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="espirituFecha2Head">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#espirituFecha2" aria-expanded="false" aria-controls="espirituFecha2">
+            Fecha #2 - 06/Abr/2025
+          </button>
+        </h2>
+        <div id="espirituFecha2" class="accordion-collapse collapse" aria-labelledby="espirituFecha2Head" data-bs-parent="#espirituFechas">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Dimensión Galáctica</strong> calificó a <strong>Brigada-A</strong>: 9</li>
+              <li><strong>Brigada-A</strong> calificó a <strong>Dimensión Galáctica</strong>: 10</li>
+              <li><strong>Cortacésped</strong> calificó a <strong>Tetzu</strong>: 10</li>
+              <li><strong>Tetzu</strong> calificó a <strong>Cortacésped</strong>: 10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fecha 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="espirituFecha3Head">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#espirituFecha3" aria-expanded="false" aria-controls="espirituFecha3">
+            Fecha #3 - 11/May/2025
+          </button>
+        </h2>
+        <div id="espirituFecha3" class="accordion-collapse collapse" aria-labelledby="espirituFecha3Head" data-bs-parent="#espirituFechas">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Tetzu</strong> calificó a <strong>Dimensión Galáctica</strong>: 10</li>
+              <li><strong>Dimensión Galáctica</strong> calificó a <strong>Tetzu</strong>: 10</li>
+              <li><strong>Cortacésped</strong> calificó a <strong>Brigada-A</strong>: 10</li>
+              <li><strong>Brigada-A</strong> calificó a <strong>Cortacésped</strong>: 10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Fecha 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="espirituFecha5Head">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#espirituFecha5" aria-expanded="false" aria-controls="espirituFecha5">
+            Fecha #5 - 29/Jun/2025
+          </button>
+        </h2>
+        <div id="espirituFecha5" class="accordion-collapse collapse" aria-labelledby="espirituFecha5Head" data-bs-parent="#espirituFechas">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Cortacésped</strong> calificó a <strong>Tetzu</strong>: 9</li>
+              <li><strong>Tetzu</strong> calificó a <strong>Cortacésped</strong>: 9</li>
+              <li><strong>Dimensión Galáctica</strong> calificó a <strong>Brigada-A</strong>: 10</li>
+              <li><strong>Brigada-A</strong> calificó a <strong>Dimensión Galáctica</strong>: 9</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fecha 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="espirituFecha6Head">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#espirituFecha6" aria-expanded="false" aria-controls="espirituFecha6">
+            Fecha #6 - 13/Jul/2025
+          </button>
+        </h2>
+        <div id="espirituFecha6" class="accordion-collapse collapse" aria-labelledby="espirituFecha6Head" data-bs-parent="#espirituFechas">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Cortacésped</strong> calificó a <strong>Brigada-A</strong>: 10</li>
+              <li><strong>Brigada-A</strong> calificó a <strong>Cortacésped</strong>: 10</li>
+              <li><strong>Tetzu</strong> calificó a <strong>Dimensión Galáctica</strong>: 9</li>
+              <li><strong>Dimensión Galáctica</strong> calificó a <strong>Tetzu</strong>: 10</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+  <script>
+    const espirituJuegos = [
+      { quien: 'Brigada-A', a_quien: 'Tetzu', puntaje: 10 },
+      { quien: 'Tetzu', a_quien: 'Brigada-A', puntaje: 10 },
+      { quien: 'Dimensión Galáctica', a_quien: 'Cortacésped', puntaje: 11 },
+      { quien: 'Cortacésped', a_quien: 'Dimensión Galáctica', puntaje: 10 },
+
+      { quien: 'Dimensión Galáctica', a_quien: 'Brigada-A', puntaje: 9 },
+      { quien: 'Brigada-A', a_quien: 'Dimensión Galáctica', puntaje: 10 },
+      { quien: 'Cortacésped', a_quien: 'Tetzu', puntaje: 10 },
+      { quien: 'Tetzu', a_quien: 'Cortacésped', puntaje: 10 },
+
+      { quien: 'Tetzu', a_quien: 'Dimensión Galáctica', puntaje: 10 },
+      { quien: 'Dimensión Galáctica', a_quien: 'Tetzu', puntaje: 10 },
+      { quien: 'Cortacésped', a_quien: 'Brigada-A', puntaje: 10 },
+      { quien: 'Brigada-A', a_quien: 'Cortacésped', puntaje: 10 },
+
+      { quien: 'Dimensión Galáctica', a_quien: 'Brigada-A', puntaje: 10 },
+      { quien: 'Brigada-A', a_quien: 'Dimensión Galáctica', puntaje: 10 },
+      { quien: 'Cortacésped', a_quien: 'Tetzu', puntaje: 9 },
+      { quien: 'Tetzu', a_quien: 'Cortacésped', puntaje: 9 }
+
+      { quien: 'Dimensión Galáctica', a_quien: 'Tetzu', puntaje: 10 },
+      { quien: 'Brigada-A', a_quien: 'Cortacésped', puntaje: 10 },
+      { quien: 'Cortacésped', a_quien: 'Brigada-A', puntaje:10 },
+      { quien: 'Tetzu', a_quien: 'Dimensión Galáctica', puntaje: 9 }
+    ];
+
+    function renderEspirituTabla() {
+      const acumulados = {};
+      espirituJuegos.forEach(({ a_quien, puntaje }) => {
+        if (!acumulados[a_quien]) acumulados[a_quien] = { partidos: 0, total: 0 };
+        acumulados[a_quien].partidos++;
+        acumulados[a_quien].total += puntaje;
+      });
+
+      const ordenados = Object.entries(acumulados).map(([equipo, datos]) => {
+        return {
+          equipo,
+          partidos: datos.partidos,
+          total: datos.total,
+          promedio: (datos.total / datos.partidos).toFixed(2)
+        };
+      }).sort((a, b) => b.promedio - a.promedio);
+
+      const cuerpo = ordenados.map(row => `
+        <tr>
+          <td>${row.equipo}</td>
+          <td>${row.partidos}</td>
+          <td>${row.total}</td>
+          <td><strong>${row.promedio}</strong></td>
+        </tr>
+      `).join('');
+
+      document.getElementById('tablaEspiritu').innerHTML = cuerpo;
+    }
+
+    renderEspirituTabla();
+  </script>
+
+</body>
+</html>
